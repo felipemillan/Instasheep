@@ -36,12 +36,13 @@ class Auth {
             }
             
             if let user = user {
-//                let newUser = [
-//                    "name": user.displayName,
-//                    "email": user.email
-//                ]
+                let newUser = [
+                    "name": user.displayName,
+                    "email": user.email
+                ]
                 
                 // save new user to database
+                Database.sharedInstance.createUser(newUser)
                 
                 completion(true, nil)
             } else {
