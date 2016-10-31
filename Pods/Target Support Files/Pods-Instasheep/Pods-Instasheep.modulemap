@@ -1,0 +1,6 @@
+framework module Pods_Instasheep {
+  umbrella header "Pods-Instasheep-umbrella.h"
+
+  export *
+  module * { export * }
+}
