@@ -10,8 +10,8 @@
 		187277AD1DC77A9E0007EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */; };
 		187277B01DC77E250007EDC7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277AF1DC77E250007EDC7 /* Auth.swift */; };
 		187277B21DC77FE70007EDC7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B11DC77FE70007EDC7 /* Database.swift */; };
+		187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B31DC783AD0007EDC7 /* LoginViewController.swift */; };
 		18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E841DC77974002BA61F /* AppDelegate.swift */; };
-		18EC2E871DC77974002BA61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E861DC77974002BA61F /* ViewController.swift */; };
 		18EC2E8A1DC77974002BA61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E881DC77974002BA61F /* Main.storyboard */; };
 		18EC2E8C1DC77974002BA61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8B1DC77974002BA61F /* Assets.xcassets */; };
 		18EC2E8F1DC77974002BA61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8D1DC77974002BA61F /* LaunchScreen.storyboard */; };
@@ -34,9 +34,10 @@
 		187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		187277AF1DC77E250007EDC7 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		187277B11DC77FE70007EDC7 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		187277B31DC783AD0007EDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		187277B51DC786E30007EDC7 /* Instasheep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Instasheep.entitlements; sourceTree = "<group>"; };
 		18EC2E811DC77974002BA61F /* Instasheep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instasheep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC2E841DC77974002BA61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18EC2E861DC77974002BA61F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18EC2E891DC77974002BA61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18EC2E8B1DC77974002BA61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18EC2E8E1DC77974002BA61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +82,26 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		187277B61DC7872E0007EDC7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				187277B31DC783AD0007EDC7 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		187277B71DC787400007EDC7 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				187277B51DC786E30007EDC7 /* Instasheep.entitlements */,
+				187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */,
+				18EC2E8B1DC77974002BA61F /* Assets.xcassets */,
+				18EC2E8D1DC77974002BA61F /* LaunchScreen.storyboard */,
+				18EC2E901DC77974002BA61F /* Info.plist */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
 		18EC2E781DC77973002BA61F = {
 			isa = PBXGroup;
 			children = (
@@ -104,14 +125,11 @@
 		18EC2E831DC77974002BA61F /* Instasheep */ = {
 			isa = PBXGroup;
 			children = (
-				187277AE1DC77E150007EDC7 /* Services */,
-				187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */,
 				18EC2E841DC77974002BA61F /* AppDelegate.swift */,
-				18EC2E861DC77974002BA61F /* ViewController.swift */,
+				187277B71DC787400007EDC7 /* SupportFiles */,
+				187277AE1DC77E150007EDC7 /* Services */,
+				187277B61DC7872E0007EDC7 /* ViewControllers */,
 				18EC2E881DC77974002BA61F /* Main.storyboard */,
-				18EC2E8B1DC77974002BA61F /* Assets.xcassets */,
-				18EC2E8D1DC77974002BA61F /* LaunchScreen.storyboard */,
-				18EC2E901DC77974002BA61F /* Info.plist */,
 			);
 			path = Instasheep;
 			sourceTree = "<group>";
@@ -203,6 +221,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = ELTTE7K8TT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					18EC2E941DC77974002BA61F = {
 						CreatedOnToolsVersion = 8.1;
@@ -350,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EC2E871DC77974002BA61F /* ViewController.swift in Sources */,
+				187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */,
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,
 				187277B21DC77FE70007EDC7 /* Database.swift in Sources */,
 				187277B01DC77E250007EDC7 /* Auth.swift in Sources */,
@@ -491,6 +514,7 @@
 			baseConfigurationReference = D95BD1454558011677E18436 /* Pods-Instasheep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Instasheep/Instasheep.entitlements;
 				DEVELOPMENT_TEAM = ELTTE7K8TT;
 				INFOPLIST_FILE = Instasheep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -505,6 +529,7 @@
 			baseConfigurationReference = C3EF04F5FB8F360ECCF87CFC /* Pods-Instasheep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Instasheep/Instasheep.entitlements;
 				DEVELOPMENT_TEAM = ELTTE7K8TT;
 				INFOPLIST_FILE = Instasheep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
