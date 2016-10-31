@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		187277AD1DC77A9E0007EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */; };
+		187277B01DC77E250007EDC7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277AF1DC77E250007EDC7 /* Auth.swift */; };
 		18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E841DC77974002BA61F /* AppDelegate.swift */; };
 		18EC2E871DC77974002BA61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E861DC77974002BA61F /* ViewController.swift */; };
 		18EC2E8A1DC77974002BA61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E881DC77974002BA61F /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		187277AF1DC77E250007EDC7 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		18EC2E811DC77974002BA61F /* Instasheep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instasheep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC2E841DC77974002BA61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EC2E861DC77974002BA61F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187277AE1DC77E150007EDC7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				187277AF1DC77E250007EDC7 /* Auth.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		18EC2E781DC77973002BA61F = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		18EC2E831DC77974002BA61F /* Instasheep */ = {
 			isa = PBXGroup;
 			children = (
+				187277AE1DC77E150007EDC7 /* Services */,
 				187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */,
 				18EC2E841DC77974002BA61F /* AppDelegate.swift */,
 				18EC2E861DC77974002BA61F /* ViewController.swift */,
@@ -338,6 +349,7 @@
 			files = (
 				18EC2E871DC77974002BA61F /* ViewController.swift in Sources */,
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,
+				187277B01DC77E250007EDC7 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
