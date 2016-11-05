@@ -83,6 +83,8 @@ class RegisterViewController: UIViewController {
             password.characters.count > 0 &&
             confirmPassword.characters.count > 0 {
             
+            
+            
             if password == confirmPassword {
                 
                 Database.shared.usernameExists(username, completion: { (exists) in
