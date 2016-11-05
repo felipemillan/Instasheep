@@ -173,14 +173,14 @@
 		18EC2E831DC77974002BA61F /* Instasheep */ = {
 			isa = PBXGroup;
 			children = (
-				1831E1561DCD670000B28B38 /* Model */,
 				18EC2E841DC77974002BA61F /* AppDelegate.swift */,
+				189F242B1DCE36D1006EC147 /* Helpers.swift */,
 				187277B71DC787400007EDC7 /* SupportFiles */,
+				1831E1561DCD670000B28B38 /* Model */,
 				187277AE1DC77E150007EDC7 /* Services */,
 				187277B61DC7872E0007EDC7 /* ViewControllers */,
-				18EC2E881DC77974002BA61F /* Main.storyboard */,
 				1831E1511DCD58FB00B28B38 /* View */,
-				189F242B1DCE36D1006EC147 /* Helpers.swift */,
+				18EC2E881DC77974002BA61F /* Main.storyboard */,
 			);
 			path = Instasheep;
 			sourceTree = "<group>";
