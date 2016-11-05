@@ -41,11 +41,18 @@ class Database {
         currentUser.updateChildValues(value)
     }
     
-    func createPost(_ value: [String: AnyObject]) {
+    func createPost(_ post: [String: String]) {
         
-        let newPostRef = posts.childByAutoId()
-        newPostRef.setValue(value)
-        currentUserPosts.child(newPostRef.key).setValue(true)
+        let userUID = Auth.sharedInstance.currentUserUID
+        
+        let key = posts.childByAutoId().key
+        
+        let values = [
+            "/posts/\(key)": post,
+            "/user-posts/\(userUID)/\(key)": post
+        ]
+        
+        root.updateChildValues(values)
         
     }
     
