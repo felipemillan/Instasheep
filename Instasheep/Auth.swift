@@ -26,6 +26,10 @@ class Auth {
         }
     }
     
+    var isLoggedIn: Bool {
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
+    }
+    
     func loginWithFacebook(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         
@@ -43,6 +47,7 @@ class Auth {
                 
                 // save new user to database
                 Database.sharedInstance.createUser(newUser)
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 
                 completion(true, nil)
             } else {
@@ -52,7 +57,9 @@ class Auth {
     }
     
     
-    func logout() throws {
-        try auth?.signOut()
+    func logout() {
+        if ((try? auth?.signOut()) != nil) {
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        }
     }
 }

@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1831E14F1DCD58F500B28B38 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E14D1DCD58F500B28B38 /* PostCell.swift */; };
+		1831E1501DCD58F500B28B38 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E14E1DCD58F500B28B38 /* PostCell.xib */; };
+		1831E1531DCD5AC700B28B38 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */; };
+		1831E1551DCD606F00B28B38 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E1541DCD606F00B28B38 /* Storage.swift */; };
+		1831E1581DCD670800B28B38 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E1571DCD670800B28B38 /* Post.swift */; };
 		187277AD1DC77A9E0007EDC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */; };
 		187277B01DC77E250007EDC7 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277AF1DC77E250007EDC7 /* Auth.swift */; };
 		187277B21DC77FE70007EDC7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B11DC77FE70007EDC7 /* Database.swift */; };
 		187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B31DC783AD0007EDC7 /* LoginViewController.swift */; };
+		187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B81DC78EDC0007EDC7 /* FeedViewController.swift */; };
 		18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E841DC77974002BA61F /* AppDelegate.swift */; };
 		18EC2E8A1DC77974002BA61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E881DC77974002BA61F /* Main.storyboard */; };
 		18EC2E8C1DC77974002BA61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8B1DC77974002BA61F /* Assets.xcassets */; };
@@ -31,11 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1831E14D1DCD58F500B28B38 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		1831E14E1DCD58F500B28B38 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		1831E1541DCD606F00B28B38 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		1831E1571DCD670800B28B38 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		187277AC1DC77A9E0007EDC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		187277AF1DC77E250007EDC7 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		187277B11DC77FE70007EDC7 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		187277B31DC783AD0007EDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		187277B51DC786E30007EDC7 /* Instasheep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Instasheep.entitlements; sourceTree = "<group>"; };
+		187277B81DC78EDC0007EDC7 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		18EC2E811DC77974002BA61F /* Instasheep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instasheep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC2E841DC77974002BA61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EC2E891DC77974002BA61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,11 +85,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1831E1511DCD58FB00B28B38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1831E14D1DCD58F500B28B38 /* PostCell.swift */,
+				1831E14E1DCD58F500B28B38 /* PostCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1831E1561DCD670000B28B38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1831E1571DCD670800B28B38 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		187277AE1DC77E150007EDC7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				187277AF1DC77E250007EDC7 /* Auth.swift */,
 				187277B11DC77FE70007EDC7 /* Database.swift */,
+				1831E1541DCD606F00B28B38 /* Storage.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -86,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				187277B31DC783AD0007EDC7 /* LoginViewController.swift */,
+				187277B81DC78EDC0007EDC7 /* FeedViewController.swift */,
+				1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -125,11 +157,13 @@
 		18EC2E831DC77974002BA61F /* Instasheep */ = {
 			isa = PBXGroup;
 			children = (
+				1831E1561DCD670000B28B38 /* Model */,
 				18EC2E841DC77974002BA61F /* AppDelegate.swift */,
 				187277B71DC787400007EDC7 /* SupportFiles */,
 				187277AE1DC77E150007EDC7 /* Services */,
 				187277B61DC7872E0007EDC7 /* ViewControllers */,
 				18EC2E881DC77974002BA61F /* Main.storyboard */,
+				1831E1511DCD58FB00B28B38 /* View */,
 			);
 			path = Instasheep;
 			sourceTree = "<group>";
@@ -261,6 +295,7 @@
 			files = (
 				18EC2E8F1DC77974002BA61F /* LaunchScreen.storyboard in Resources */,
 				187277AD1DC77A9E0007EDC7 /* GoogleService-Info.plist in Resources */,
+				1831E1501DCD58F500B28B38 /* PostCell.xib in Resources */,
 				18EC2E8C1DC77974002BA61F /* Assets.xcassets in Resources */,
 				18EC2E8A1DC77974002BA61F /* Main.storyboard in Resources */,
 			);
@@ -375,8 +410,13 @@
 			files = (
 				187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */,
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,
+				187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */,
 				187277B21DC77FE70007EDC7 /* Database.swift in Sources */,
 				187277B01DC77E250007EDC7 /* Auth.swift in Sources */,
+				1831E1551DCD606F00B28B38 /* Storage.swift in Sources */,
+				1831E1581DCD670800B28B38 /* Post.swift in Sources */,
+				1831E14F1DCD58F500B28B38 /* PostCell.swift in Sources */,
+				1831E1531DCD5AC700B28B38 /* TakePictureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

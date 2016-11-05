@@ -20,16 +20,33 @@ class Database {
     }
     
     // MARK: - References
-    private let root = FIRDatabase.database().reference()
-    private var users: FIRDatabaseReference {
+    let root = FIRDatabase.database().reference()
+    var users: FIRDatabaseReference {
         return root.child("users")
     }
-    private var currentUser: FIRDatabaseReference {
+    var currentUser: FIRDatabaseReference {
         return users.child(Auth.sharedInstance.currentUserUID)
+    }
+    
+    var currentUserPosts: FIRDatabaseReference {
+        return currentUser.child("posts")
+    }
+    
+    var posts: FIRDatabaseReference {
+        return root.child("posts")
     }
     
     // MARK: - Users
     func createUser(_ value: [String: String?]) {
         currentUser.updateChildValues(value)
     }
+    
+    func createPost(_ value: [String: AnyObject]) {
+        
+        let newPostRef = posts.childByAutoId()
+        newPostRef.setValue(value)
+        currentUserPosts.child(newPostRef.key).setValue(true)
+        
+    }
+    
 }

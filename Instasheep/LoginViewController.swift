@@ -20,11 +20,6 @@ class LoginViewController: UIViewController {
         facebookLoginButton.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
@@ -37,8 +32,11 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             Auth.sharedInstance.loginWithFacebook() { (success, error) in
                 
                 if success {
-                    // perform segue to home controller
-                    print("Yahooo!!!")
+                    
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                    self.present(viewController, animated: true, completion: nil)
+                    
                 } else {
                     if let error = error {
                         print(error.localizedDescription)
