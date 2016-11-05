@@ -59,6 +59,16 @@ class Auth {
         
     }
     
+    func loginUser(withEmail email: String, password: String, completion: @escaping (Error?) -> Void) {
+        auth?.signIn(withEmail: email, password: password, completion: { (_, error) in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            UserDefaults.standard.set(true, forKey: self.isLoggedInKey)
+            completion(nil)
+        })
+    }
     
     func logout() {
         if ((try? auth?.signOut()) != nil) {

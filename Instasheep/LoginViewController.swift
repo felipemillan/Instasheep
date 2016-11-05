@@ -32,6 +32,28 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                print("Unexpected error")
+                return
+        }
+        
+        if email.characters.count > 0 && password.characters.count > 0 {
+            
+            Auth.shared.loginUser(withEmail: email, password: password, completion: { (error) in
+                
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                self.performSegue(withIdentifier: "userLoggedIn", sender: nil)
+                
+            })
+            
+        }
+        
     }
     
 }

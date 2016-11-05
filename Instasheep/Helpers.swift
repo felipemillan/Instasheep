@@ -9,9 +9,16 @@
 import Foundation
 
 func isUsernameValid(_ username: String) -> Bool {
-    return false
+    return !username.contains(" ")
 }
 
-func normalizeUsername(_ oldUsername: String) -> String {
-    return ""
-}
+//func normalizeUsername(_ oldUsername: String) -> String {
+//    
+//    let accepterdChars = Set<Character>()
+//    
+//    let newUsername = oldUsername.lowercased().characters.filter {
+//        accepterdChars.hasMember(inPlane: String($0).utf8.first!)
+//    }
+//    
+//    return String(newUsername)
+//}

@@ -114,6 +114,7 @@
                         <outlet property="emailTextField" destination="g2p-gX-jvC" id="hl2-J8-z88"/>
                         <outlet property="loginButton" destination="O3E-7B-Z57" id="fbp-n9-366"/>
                         <outlet property="passwordTextField" destination="0d3-SV-FCf" id="it7-Db-yys"/>
+                        <segue destination="2LR-ZL-tG9" kind="show" identifier="userLoggedIn" id="slF-zk-o7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -185,13 +186,13 @@
                                         <rect key="frame" x="8" y="150" width="327" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-gQ-t3R">
                                         <rect key="frame" x="8" y="199" width="327" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -344,7 +345,13 @@
                             <constraint firstAttribute="trailing" secondItem="hBj-4h-kHe" secondAttribute="trailing" id="QXt-Mt-vmp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Instasheep" id="329-Zh-9ED"/>
+                    <navigationItem key="navigationItem" title="Instasheep" id="329-Zh-9ED">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Txf-aA-ssQ">
+                            <connections>
+                                <action selector="logOutButtonTapped:" destination="RjB-ZG-1ei" id="FDL-Y1-8eY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="hBj-4h-kHe" id="hfp-89-FLx"/>
                     </connections>
@@ -467,4 +474,7 @@
         <image name="instasheep_logo" width="350" height="105"/>
         <image name="placeholder_profile_image" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uYc-0t-dUG"/>
+    </inferredMetricsTieBreakers>
 </document>

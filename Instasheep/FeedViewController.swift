@@ -29,6 +29,17 @@ class FeedViewController: UIViewController {
         fetchPosts()
         
     }
+    
+    @IBAction func logOutButtonTapped(_ sender: UIBarButtonItem) {
+        
+        Auth.shared.logout()
+        
+        if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
+            present(loginVC, animated: true, completion: nil)
+        }
+        
+    }
+    
 
     func fetchPosts() {
         Database.shared.posts.observe(.childAdded, with: {
