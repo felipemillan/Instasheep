@@ -45,7 +45,7 @@ class Auth {
             ]
             
             if let user = user {
-                Database.shared.saveUser(withUID: user.uid, value: value) { error in
+                Database.shared.saveUser(withUID: user.uid, username: username, value: value) { error in
                     guard error == nil else {
                         completion(error)
                         return

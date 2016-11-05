@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2LR-ZL-tG9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsF-PU-KTq">
-                                <rect key="frame" x="16" y="209" width="343" height="250"/>
+                                <rect key="frame" x="16" y="228.5" width="343" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-fW-zLG" userLabel="NameSeparator">
                                         <rect key="frame" x="0.0" y="49" width="343" height="1"/>
@@ -231,15 +231,8 @@
                                     <constraint firstItem="aj0-gD-okO" firstAttribute="height" secondItem="dXg-X3-hVe" secondAttribute="height" id="y0I-hD-rnu"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instasheep_logo" translatesAutoresizingMaskIntoConstraints="NO" id="FzM-eJ-GKZ">
-                                <rect key="frame" x="67" y="55" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="0cS-2r-dmx"/>
-                                    <constraint firstAttribute="height" constant="128" id="dNV-XU-txT"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkk-KB-gLE">
-                                <rect key="frame" x="16" y="474" width="343" height="40"/>
+                                <rect key="frame" x="16" y="493.5" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QnK-fk-MAK"/>
@@ -269,17 +262,24 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-UL-mKD">
+                                <rect key="frame" x="67" y="74.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="8I9-Nk-uuA"/>
+                                    <constraint firstAttribute="width" constant="240" id="uJA-Oy-W9K"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Mkk-KB-gLE" firstAttribute="trailing" secondItem="lsF-PU-KTq" secondAttribute="trailing" id="47e-0Z-lfg"/>
-                            <constraint firstItem="FzM-eJ-GKZ" firstAttribute="centerX" secondItem="bJX-tU-6ay" secondAttribute="centerX" id="VU9-dP-tu9"/>
-                            <constraint firstItem="lsF-PU-KTq" firstAttribute="centerY" secondItem="bJX-tU-6ay" secondAttribute="centerY" id="Zur-NP-JKJ"/>
+                            <constraint firstItem="lsF-PU-KTq" firstAttribute="centerY" secondItem="bJX-tU-6ay" secondAttribute="centerY" constant="20" id="Zur-NP-JKJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lsF-PU-KTq" secondAttribute="trailing" id="a5H-7I-AC8"/>
+                            <constraint firstItem="lsF-PU-KTq" firstAttribute="top" secondItem="fW3-UL-mKD" secondAttribute="bottom" constant="26" id="bf7-qr-ag7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lsF-PU-KTq" secondAttribute="leading" id="cTC-fo-WzG"/>
                             <constraint firstItem="Mkk-KB-gLE" firstAttribute="leading" secondItem="lsF-PU-KTq" secondAttribute="leading" id="iJS-oQ-fN0"/>
                             <constraint firstItem="Mkk-KB-gLE" firstAttribute="top" secondItem="lsF-PU-KTq" secondAttribute="bottom" constant="15" id="k0g-2X-4Gb"/>
-                            <constraint firstItem="lsF-PU-KTq" firstAttribute="top" secondItem="FzM-eJ-GKZ" secondAttribute="bottom" constant="25.5" id="loN-1N-WJU"/>
+                            <constraint firstItem="fW3-UL-mKD" firstAttribute="centerX" secondItem="bJX-tU-6ay" secondAttribute="centerX" id="wPK-0d-agp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -289,8 +289,10 @@
                         <outlet property="nameTextField" destination="Mck-vy-Cah" id="BDV-Il-Tir"/>
                         <outlet property="navigationBar" destination="q8w-h7-ltE" id="qeE-vF-vRP"/>
                         <outlet property="passwordTextField" destination="9aw-qh-ABb" id="u31-bQ-aEz"/>
+                        <outlet property="profileImageView" destination="fW3-UL-mKD" id="yvT-Sd-K5M"/>
                         <outlet property="registerButton" destination="Mkk-KB-gLE" id="q66-gR-fHD"/>
                         <outlet property="usernameTextField" destination="dXg-X3-hVe" id="l78-wl-Ym6"/>
+                        <segue destination="2LR-ZL-tG9" kind="show" identifier="userRegistred" id="uYc-0t-dUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sp3-cc-6St" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -463,5 +465,6 @@
     </scenes>
     <resources>
         <image name="instasheep_logo" width="350" height="105"/>
+        <image name="placeholder_profile_image" width="500" height="500"/>
     </resources>
 </document>

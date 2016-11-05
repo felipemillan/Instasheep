@@ -32,17 +32,41 @@ class Database {
         return currentUser.child("posts")
     }
     
+    var usernames: FIRDatabaseReference {
+        return root.child("usernames")
+    }
+    
     var posts: FIRDatabaseReference {
         return root.child("posts")
     }
     
     // MARK: - Users
-    func saveUser(withUID uid: String, value: [String: String?], completion: @escaping (Error?) -> Void) {
+    
+    func usernameExists(_ username: String, completion: @escaping (Bool) -> Void) {
+        usernames.child(username).observeSingleEvent(of: .value, with: { snapshot in
+            completion(snapshot.exists())
+        })
+    }
+    
+    
+    func saveUser(withUID uid: String, username: String, value: [String: String?], completion: @escaping (Error?) -> Void) {
         
-        users.child(uid).setValue(value) { (error, _) in
+//        usernameExists(username) { exists in
+//            if exists {
+//                
+//            }
+//        }
+        
+        let values = ["/users/\(uid)": value, "/usernames/\(username)": uid] as [String: Any]
+        
+        root.updateChildValues(values) { (error, _) in
             completion(error)
         }
         
+    }
+    
+    func updateUser(_ newValue: [String: String]) {
+        currentUser.updateChildValues(newValue)
     }
     
     func createPost(_ post: [String: String]) {

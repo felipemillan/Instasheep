@@ -20,6 +20,8 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Auth.shared.logout()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -31,14 +33,14 @@ class FeedViewController: UIViewController {
     }
 
     func fetchPosts() {
-        Database.sharedInstance.posts.observe(.childAdded, with: {
+        Database.shared.posts.observe(.childAdded, with: {
             snapshot in
             
             if let dict = snapshot.value as? [String: Any] {
                 
                 let newPost = Post(with: dict)
                 if let userUID = newPost.userUID {
-                    Database.sharedInstance.users.child(userUID).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+                    Database.shared.users.child(userUID).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
                         if let name = snapshot.value as? String {
                             self.usernamesForUserPosts.insert(name, at: 0)
                             self.posts.insert(newPost, at: 0)

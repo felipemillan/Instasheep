@@ -25,7 +25,7 @@ class Storage {
         return root.child("users")
     }
     private var currentUser: FIRStorageReference {
-        return users.child(Auth.sharedInstance.currentUserUID)
+        return users.child(Auth.shared.currentUserUID)
     }
     
     func upload(_ data: Data, withName name: String, completion: @escaping (_ downloadUrl: String?, _ error: Error?) -> Void) {

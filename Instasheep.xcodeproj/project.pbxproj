@@ -18,6 +18,7 @@
 		187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B31DC783AD0007EDC7 /* LoginViewController.swift */; };
 		187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B81DC78EDC0007EDC7 /* FeedViewController.swift */; };
 		189F24271DCE07A5006EC147 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F24261DCE07A5006EC147 /* RegisterViewController.swift */; };
+		189F242A1DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F24291DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift */; };
 		18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E841DC77974002BA61F /* AppDelegate.swift */; };
 		18EC2E8A1DC77974002BA61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E881DC77974002BA61F /* Main.storyboard */; };
 		18EC2E8C1DC77974002BA61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8B1DC77974002BA61F /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		187277B51DC786E30007EDC7 /* Instasheep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Instasheep.entitlements; sourceTree = "<group>"; };
 		187277B81DC78EDC0007EDC7 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		189F24261DCE07A5006EC147 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		189F24291DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RegisterViewController.swift"; sourceTree = "<group>"; };
 		18EC2E811DC77974002BA61F /* Instasheep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instasheep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC2E841DC77974002BA61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EC2E891DC77974002BA61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 				187277B31DC783AD0007EDC7 /* LoginViewController.swift */,
 				187277B81DC78EDC0007EDC7 /* FeedViewController.swift */,
 				1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */,
-				189F24261DCE07A5006EC147 /* RegisterViewController.swift */,
+				189F24281DCE1F18006EC147 /* RegisterViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -135,6 +137,15 @@
 				18EC2E901DC77974002BA61F /* Info.plist */,
 			);
 			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		189F24281DCE1F18006EC147 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				189F24261DCE07A5006EC147 /* RegisterViewController.swift */,
+				189F24291DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift */,
+			);
+			name = RegisterViewController;
 			sourceTree = "<group>";
 		};
 		18EC2E781DC77973002BA61F = {
@@ -414,6 +425,7 @@
 				187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */,
 				189F24271DCE07A5006EC147 /* RegisterViewController.swift in Sources */,
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,
+				189F242A1DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift in Sources */,
 				187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */,
 				187277B21DC77FE70007EDC7 /* Database.swift in Sources */,
 				187277B01DC77E250007EDC7 /* Auth.swift in Sources */,
