@@ -20,8 +20,6 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Auth.shared.logout()
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         

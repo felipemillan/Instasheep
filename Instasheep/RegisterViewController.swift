@@ -31,6 +31,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         picker = UIImagePickerController()
+        picker.delegate = self
         
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentPickerController)))
