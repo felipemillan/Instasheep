@@ -8,10 +8,9 @@
 
 import Foundation
 import FirebaseAuth
-import FBSDKLoginKit
 
 class Auth {
-    static var sharedInstance: Auth {
+    static var shared: Auth {
         struct Static {
             static let instance = Auth()
         }
@@ -19,6 +18,7 @@ class Auth {
     }
     
     private let auth = FIRAuth.auth()
+    private let isLoggedInKey = "isLoggedIn"
     
     var currentUserUID: String {
         get {
@@ -27,33 +27,36 @@ class Auth {
     }
     
     var isLoggedIn: Bool {
-        return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        return UserDefaults.standard.bool(forKey: isLoggedInKey)
     }
     
-    func loginWithFacebook(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
-        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+    func registerNewUser(withEmail email: String, password: String, name: String, username: String, completion: @escaping (Error?) -> Void) {
         
-        auth?.signIn(with: credential, completion: { (user, error) in
+        auth?.createUser(withEmail: email, password: password) { (user, error) in
             guard error == nil else {
-                completion(false, error)
+                completion(error)
                 return
             }
             
+            let value = [
+                "name": name,
+                "email": email,
+                "username": username
+            ]
+            
             if let user = user {
-                let newUser = [
-                    "name": user.displayName,
-                    "email": user.email
-                ]
-                
-                // save new user to database
-                Database.sharedInstance.createUser(newUser)
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                
-                completion(true, nil)
-            } else {
-                completion(false, error)
+                Database.shared.saveUser(withUID: user.uid, value: value) { error in
+                    guard error == nil else {
+                        completion(error)
+                        return
+                    }
+                    
+                    UserDefaults.standard.set(true, forKey: self.isLoggedInKey)
+                    completion(nil)
+                }
             }
-        })
+        }
+        
     }
     
     

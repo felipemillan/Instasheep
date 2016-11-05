@@ -12,7 +12,7 @@ import FirebaseDatabase
 class Database {
     
     // Singleton
-    static var sharedInstance: Database {
+    static var shared: Database {
         struct Static {
             static let instance = Database()
         }
@@ -25,7 +25,7 @@ class Database {
         return root.child("users")
     }
     var currentUser: FIRDatabaseReference {
-        return users.child(Auth.sharedInstance.currentUserUID)
+        return users.child(Auth.shared.currentUserUID)
     }
     
     var currentUserPosts: FIRDatabaseReference {
@@ -37,13 +37,17 @@ class Database {
     }
     
     // MARK: - Users
-    func createUser(_ value: [String: String?]) {
-        currentUser.updateChildValues(value)
+    func saveUser(withUID uid: String, value: [String: String?], completion: @escaping (Error?) -> Void) {
+        
+        users.child(uid).setValue(value) { (error, _) in
+            completion(error)
+        }
+        
     }
     
     func createPost(_ post: [String: String]) {
         
-        let userUID = Auth.sharedInstance.currentUserUID
+        let userUID = Auth.shared.currentUserUID
         
         let key = posts.childByAutoId().key
         
