@@ -54,11 +54,13 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 }
                 
                 if let downloadUrl = downloadUrl {
+                    
                     let value: [String: String] = [
-                        "image_url": downloadUrl,
+                        "userUID": Auth.shared.currentUserUID,
+                        "imageUrl": downloadUrl,
                         "caption": self.captionTextField.text ?? ""
                     ]
-                    Database.sharedInstance.createPost(value as [String : AnyObject])
+                    Database.shared.createPost(value)
                 }
                 
                 self.tabBarController?.selectedIndex = 0

@@ -10,17 +10,21 @@ import Foundation
 
 struct Post {
     
-    var imageUrl: String
-    var caption: String
+    var uid: String?
+    var userUID: String?
+    var imageUrl: String?
+    var caption: String?
+    var likes: Int?
     
-    init(imageUrl: String, caption: String) {
+    init(imageUrl: String?, caption: String?) {
         self.imageUrl = imageUrl
         self.caption = caption
     }
     
-    init(with dictionary: [String: Any]) {
-        self.imageUrl = "\(dictionary["image_url"])"
-        self.caption = "\(dictionary["caption"])"
+    init(with dictionary: [String: Any?]) {
+        self.imageUrl = dictionary["imageUrl"] as? String
+        self.caption = dictionary["caption"] as? String
+        self.userUID = dictionary["userUID"] as? String
     }
     
 }

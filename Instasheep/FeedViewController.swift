@@ -13,6 +13,7 @@ class FeedViewController: UIViewController {
     let cellId = "PostCell"
     
     var posts = [Post]()
+    var usernamesForUserPosts = [String]()
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -28,16 +29,34 @@ class FeedViewController: UIViewController {
         fetchPosts()
         
     }
+    
+    @IBAction func logOutButtonTapped(_ sender: UIBarButtonItem) {
+        
+        Auth.shared.logout()
+        
+        if let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
+            present(loginVC, animated: true, completion: nil)
+        }
+        
+    }
+    
 
     func fetchPosts() {
-        Database.sharedInstance.posts.observe(.childAdded, with: {
+        Database.shared.posts.observe(.childAdded, with: {
             snapshot in
             
             if let dict = snapshot.value as? [String: Any] {
                 
                 let newPost = Post(with: dict)
-                self.posts.insert(newPost, at: 0)
-                self.collectionView.reloadData()
+                if let userUID = newPost.userUID {
+                    Database.shared.users.child(userUID).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let name = snapshot.value as? String {
+                            self.usernamesForUserPosts.insert(name, at: 0)
+                            self.posts.insert(newPost, at: 0)
+                            self.collectionView.reloadData()
+                        }
+                    })
+                }
             }
             
         })
@@ -59,8 +78,12 @@ extension FeedViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PostCell
         
         let post = posts[indexPath.row]
+        let username = usernamesForUserPosts[indexPath.row]
         
-        if let imageUrl = URL(string: post.imageUrl) {
+        cell.usernameLabel.text = username
+        
+        if let imageUrlStr = post.imageUrl,
+            let imageUrl = URL(string: imageUrlStr) {
             URLSession.shared.dataTask(with: imageUrl) { (data, reponse, error) in
                 
                 guard error == nil else {

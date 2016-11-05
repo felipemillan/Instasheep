@@ -7,48 +7,53 @@
 //
 
 import UIKit
-import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        facebookLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        facebookLoginButton.delegate = self
+        configureUI()
+    }
+    
+    func configureUI() {
+        
+        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 4
+        
+        loginButton.layer.masksToBounds = true
+        loginButton.layer.cornerRadius = 4
+        
     }
 
-}
-
-extension LoginViewController: FBSDKLoginButtonDelegate {
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
         
-        if let error = error {
-            print(error.localizedDescription)
-        } else {
-            Auth.sharedInstance.loginWithFacebook() { (success, error) in
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                print("Unexpected error")
+                return
+        }
+        
+        if email.characters.count > 0 && password.characters.count > 0 {
+            
+            Auth.shared.loginUser(withEmail: email, password: password, completion: { (error) in
                 
-                if success {
-                    
-                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                    let viewController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-                    self.present(viewController, animated: true, completion: nil)
-                    
-                } else {
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
                 }
                 
-            }
+                self.performSegue(withIdentifier: "userLoggedIn", sender: nil)
+                
+            })
+            
         }
         
     }
     
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("didLogOut")
-    }
 }
