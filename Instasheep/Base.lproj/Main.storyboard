@@ -377,11 +377,13 @@
             </objects>
             <point key="canvasLocation" x="886" y="38"/>
         </scene>
-        <!--Feed-->
+        <!--Navigation Controller-->
         <scene sceneID="p3I-3v-D4i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hxu-UC-lhd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="WBG-wl-ogt"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_home" selectedImage="ic_home" id="WBG-wl-ogt">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lA-5T-NCu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -408,28 +410,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6o4-NV-AFP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6o4-NV-AFP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6o4-NV-AFP" secondAttribute="height" multiplier="1:1" id="yNg-Ts-PvJ"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-Vf-U5s">
-                                <rect key="frame" x="16" y="474" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Yeeah! Say something about the pic :D" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gyf-db-2Je">
+                                <rect key="frame" x="16" y="451" width="343" height="155"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6o4-NV-AFP" firstAttribute="top" secondItem="FLj-vE-L5y" secondAttribute="bottom" id="3AF-F7-lcc"/>
                             <constraint firstItem="6o4-NV-AFP" firstAttribute="leading" secondItem="8qj-al-0XV" secondAttribute="leading" id="77l-Sz-Fvn"/>
+                            <constraint firstItem="zFC-hq-2kO" firstAttribute="top" secondItem="Gyf-db-2Je" secondAttribute="bottom" constant="12" id="9JK-zv-ueg"/>
                             <constraint firstAttribute="trailing" secondItem="6o4-NV-AFP" secondAttribute="trailing" id="X9n-HI-lXY"/>
-                            <constraint firstItem="VJf-Vf-U5s" firstAttribute="leading" secondItem="8qj-al-0XV" secondAttribute="leadingMargin" id="ja0-H3-YwM"/>
-                            <constraint firstItem="VJf-Vf-U5s" firstAttribute="top" secondItem="6o4-NV-AFP" secondAttribute="bottom" constant="35" id="x6G-2O-F92"/>
-                            <constraint firstItem="VJf-Vf-U5s" firstAttribute="trailing" secondItem="8qj-al-0XV" secondAttribute="trailingMargin" id="xi7-xu-WN6"/>
+                            <constraint firstItem="Gyf-db-2Je" firstAttribute="top" secondItem="6o4-NV-AFP" secondAttribute="bottom" constant="12" id="nyK-tZ-CYd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Gyf-db-2Je" secondAttribute="leading" id="qGZ-N4-odr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gyf-db-2Je" secondAttribute="trailing" id="tEQ-g9-l9a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="oBb-bb-Fvx">
@@ -440,7 +443,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="captionTextField" destination="VJf-Vf-U5s" id="R3V-pn-BAj"/>
                         <outlet property="imageView" destination="6o4-NV-AFP" id="hTJ-IR-CxH"/>
                     </connections>
                 </viewController>
@@ -448,11 +450,13 @@
             </objects>
             <point key="canvasLocation" x="2648.8000000000002" y="784.85757121439292"/>
         </scene>
-        <!--Take Picture-->
+        <!--Navigation Controller-->
         <scene sceneID="9mL-1H-NZW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrp-hi-cTE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Take Picture" id="CBb-tx-lAH"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_camera" id="CBb-tx-lAH">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6V8-IO-n8X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -469,7 +473,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_camera" width="25" height="25"/>
+        <image name="ic_home" width="25" height="25"/>
         <image name="instasheep_logo" width="350" height="105"/>
+        <image name="placeholder" width="375" height="375"/>
         <image name="placeholder_profile_image" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
