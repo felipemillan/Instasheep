@@ -17,6 +17,16 @@ class PostCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        gesture.numberOfTapsRequired = 2
+        postImageView.addGestureRecognizer(gesture)
+        postImageView.isUserInteractionEnabled = true
+        
+    }
+    
+    func handleDoubleTap() {
+        print("Double Tapped")
     }
 
 }

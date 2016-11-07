@@ -18,6 +18,7 @@
 		187277B21DC77FE70007EDC7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B11DC77FE70007EDC7 /* Database.swift */; };
 		187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B31DC783AD0007EDC7 /* LoginViewController.swift */; };
 		187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187277B81DC78EDC0007EDC7 /* FeedViewController.swift */; };
+		1876FA661DD10C540017346D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876FA651DD10C540017346D /* ProfileViewController.swift */; };
 		189F24271DCE07A5006EC147 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F24261DCE07A5006EC147 /* RegisterViewController.swift */; };
 		189F242A1DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F24291DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift */; };
 		189F242C1DCE36D1006EC147 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189F242B1DCE36D1006EC147 /* Helpers.swift */; };
@@ -54,6 +55,7 @@
 		187277B31DC783AD0007EDC7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		187277B51DC786E30007EDC7 /* Instasheep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Instasheep.entitlements; sourceTree = "<group>"; };
 		187277B81DC78EDC0007EDC7 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		1876FA651DD10C540017346D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		189F24261DCE07A5006EC147 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		189F24291DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RegisterViewController.swift"; sourceTree = "<group>"; };
 		189F242B1DCE36D1006EC147 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -126,11 +128,12 @@
 		187277B61DC7872E0007EDC7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18FB41B21DD0AF69002032BB /* BaseViewController.swift */,
 				187277B31DC783AD0007EDC7 /* LoginViewController.swift */,
 				187277B81DC78EDC0007EDC7 /* FeedViewController.swift */,
 				1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */,
 				189F24281DCE1F18006EC147 /* RegisterViewController */,
-				18FB41B21DD0AF69002032BB /* BaseViewController.swift */,
+				1876FA651DD10C540017346D /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				189F242C1DCE36D1006EC147 /* Helpers.swift in Sources */,
 				1831E1551DCD606F00B28B38 /* Storage.swift in Sources */,
 				1831E1581DCD670800B28B38 /* Post.swift in Sources */,
+				1876FA661DD10C540017346D /* ProfileViewController.swift in Sources */,
 				1831E14F1DCD58F500B28B38 /* PostCell.swift in Sources */,
 				1831E1531DCD5AC700B28B38 /* TakePictureViewController.swift in Sources */,
 			);
