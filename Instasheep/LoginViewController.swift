@@ -95,7 +95,6 @@ class LoginViewController: BaseViewController {
                 }
                 self.stopActivity()
                 self.performSegue(withIdentifier: "userLoggedIn", sender: nil)
-                
             })
             
         }

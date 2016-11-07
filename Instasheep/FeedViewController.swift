@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: BaseViewController {
     
     let cellId = "PostCell"
     
@@ -42,6 +42,7 @@ class FeedViewController: UIViewController {
     
 
     func fetchPosts() {
+        startActivity()
         Database.shared.posts.observe(.childAdded, with: {
             snapshot in
             
@@ -55,7 +56,11 @@ class FeedViewController: UIViewController {
                             let user = User(withUID: snapshot.key, dictionary: dict)
                             self.usersForPosts.insert(user, at: 0)
                             self.posts.insert(newPost, at: 0)
-                            self.collectionView.reloadData()
+                            
+                            DispatchQueue.main.async {
+                                self.stopActivity()
+                                self.collectionView.reloadData()
+                            }
                         }
                     })
                 }

@@ -60,6 +60,8 @@ class Database {
         currentUser.updateChildValues(newValue)
     }
     
+    // MARK: - Posts
+    
     func createPost(_ _post: [String: String]) {
         
         let userUID = Auth.shared.currentUserUID
@@ -68,6 +70,7 @@ class Database {
         var post = _post
         post["userUID"] = userUID
         
+        // get current user's username
         currentUser.child("username").observeSingleEvent(of: .value, with: { snapshot in
             if let username = snapshot.value as? String {
                 post["username"] = username
