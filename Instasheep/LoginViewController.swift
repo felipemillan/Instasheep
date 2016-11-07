@@ -8,18 +8,46 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+//    var activityIndicator: UIActivityIndicatorView!
+//    var blurView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        blurView = UIView(frame: view.frame)
+//        blurView.backgroundColor = UIColor.init(red: 0/255, green: 18/255, blue: 62/255, alpha: 1)
+//        blurView.alpha = 0.7
+//        let blurEffect = UIBlurEffect(style: .dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        blurView.addSubview(blurEffectView)
+//        
+//        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50.0, height: 50.0))
+//        activityIndicator.center = view.center
+//        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        
+        
         configureUI()
     }
+    
+//    func startActivity() {
+//        view.addSubview(blurView)
+//        view.addSubview(activityIndicator)
+//        activityIndicator.startAnimating()
+//    }
+//    
+//    func stopActivity() {
+//        blurView.removeFromSuperview()
+//        activityIndicator.stopAnimating()
+//    }
     
     func configureUI() {
         
@@ -46,8 +74,12 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
+        
+        startActivity()
+        
         guard let email = emailTextField.text,
             let password = passwordTextField.text else {
+                stopActivity()
                 print("Unexpected error")
                 return
         }
@@ -57,10 +89,11 @@ class LoginViewController: UIViewController {
             Auth.shared.loginUser(withEmail: email, password: password, completion: { (error) in
                 
                 guard error == nil else {
+                    self.stopActivity()
                     print(error!.localizedDescription)
                     return
                 }
-                
+                self.stopActivity()
                 self.performSegue(withIdentifier: "userLoggedIn", sender: nil)
                 
             })

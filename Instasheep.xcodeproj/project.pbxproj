@@ -25,6 +25,7 @@
 		18EC2E8C1DC77974002BA61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8B1DC77974002BA61F /* Assets.xcassets */; };
 		18EC2E8F1DC77974002BA61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EC2E8D1DC77974002BA61F /* LaunchScreen.storyboard */; };
 		18EC2E9A1DC77974002BA61F /* InstasheepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC2E991DC77974002BA61F /* InstasheepTests.swift */; };
+		18FB41B31DD0AF69002032BB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB41B21DD0AF69002032BB /* BaseViewController.swift */; };
 		3184FF206BB23C0B134F1C6A /* Pods_Instasheep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D4159D3EABE9B000D4A76 /* Pods_Instasheep.framework */; };
 		4AE7496BED7EC63B20BD5819 /* Pods_InstasheepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7E3089E5DC37511E155585 /* Pods_InstasheepTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		18EC2E951DC77974002BA61F /* InstasheepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstasheepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EC2E991DC77974002BA61F /* InstasheepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstasheepTests.swift; sourceTree = "<group>"; };
 		18EC2E9B1DC77974002BA61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FB41B21DD0AF69002032BB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		461D18EBFF91F13AAE5ECD0E /* Pods-InstasheepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstasheepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstasheepTests/Pods-InstasheepTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F7E3089E5DC37511E155585 /* Pods_InstasheepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstasheepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9D4159D3EABE9B000D4A76 /* Pods_Instasheep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instasheep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				187277B81DC78EDC0007EDC7 /* FeedViewController.swift */,
 				1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */,
 				189F24281DCE1F18006EC147 /* RegisterViewController */,
+				18FB41B21DD0AF69002032BB /* BaseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FB41B31DD0AF69002032BB /* BaseViewController.swift in Sources */,
 				187277B41DC783AD0007EDC7 /* LoginViewController.swift in Sources */,
 				189F24271DCE07A5006EC147 /* RegisterViewController.swift in Sources */,
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,

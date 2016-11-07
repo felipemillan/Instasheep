@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var containerView: UIView!
@@ -63,6 +63,7 @@ class RegisterViewController: UIViewController {
         
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
         
     }
     
@@ -81,12 +82,14 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
+        startActivity()
+        
         guard let name = nameTextField.text,
             let email = emailTextField.text,
             let username = usernameTextField.text,
             let password = passwordTextField.text,
             let confirmPassword = confirmPasswordTextField.text else {
-                
+                stopActivity()
                 print("Unexpected Error")
                 return
         }
@@ -109,6 +112,7 @@ class RegisterViewController: UIViewController {
                             
                             guard error == nil else {
                                 print(error!.localizedDescription)
+                                self.stopActivity()
                                 return
                             }
                             
@@ -128,21 +132,25 @@ class RegisterViewController: UIViewController {
                                 }
                             }
                             
+                            self.stopActivity()
                             // Segue to next view controller
                             self.performSegue(withIdentifier: "userRegistred", sender: nil)
                             
                         })
                         
                     } else {
+                        self.stopActivity()
                         print("username already taken")
                     }
                 })
                 
             } else {
+                stopActivity()
                 print("passwords doesn't match")
             }
             
         } else {
+            stopActivity()
             print("There are empty fields.")
         }
         
