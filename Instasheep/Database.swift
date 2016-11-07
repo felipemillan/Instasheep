@@ -50,37 +50,34 @@ class Database {
     
     
     func saveUser(withUID uid: String, username: String, value: [String: String?], completion: @escaping (Error?) -> Void) {
-        
-//        usernameExists(username) { exists in
-//            if exists {
-//                
-//            }
-//        }
-        
         let values = ["/users/\(uid)": value, "/usernames/\(username)": uid] as [String: Any]
-        
         root.updateChildValues(values) { (error, _) in
             completion(error)
         }
-        
     }
     
     func updateUser(_ newValue: [String: String]) {
         currentUser.updateChildValues(newValue)
     }
     
-    func createPost(_ post: [String: String]) {
+    func createPost(_ _post: [String: String]) {
         
         let userUID = Auth.shared.currentUserUID
-        
         let key = posts.childByAutoId().key
         
-        let values = [
-            "/posts/\(key)": post,
-            "/user-posts/\(userUID)/\(key)": post
-        ]
+        var post = _post
+        post["userUID"] = userUID
         
-        root.updateChildValues(values)
+        currentUser.child("username").observeSingleEvent(of: .value, with: { snapshot in
+            if let username = snapshot.value as? String {
+                post["username"] = username
+                let values = [
+                    "/posts/\(key)": post,
+                    "/user-posts/\(userUID)/\(key)": post
+                ]
+                self.root.updateChildValues(values)
+            }
+        })
         
     }
     

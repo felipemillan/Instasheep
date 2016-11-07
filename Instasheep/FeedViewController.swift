@@ -13,7 +13,7 @@ class FeedViewController: UIViewController {
     let cellId = "PostCell"
     
     var posts = [Post]()
-    var usernamesForUserPosts = [String]()
+    var usersForPosts = [User]()
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -47,11 +47,13 @@ class FeedViewController: UIViewController {
             
             if let dict = snapshot.value as? [String: Any] {
                 
-                let newPost = Post(with: dict)
+                let newPost = Post(withUID: snapshot.key, dictionary: dict)
                 if let userUID = newPost.userUID {
-                    Database.shared.users.child(userUID).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let name = snapshot.value as? String {
-                            self.usernamesForUserPosts.insert(name, at: 0)
+                    
+                    Database.shared.users.child(userUID).observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let dict = snapshot.value as? [String: Any] {
+                            let user = User(withUID: snapshot.key, dictionary: dict)
+                            self.usersForPosts.insert(user, at: 0)
                             self.posts.insert(newPost, at: 0)
                             self.collectionView.reloadData()
                         }
@@ -78,9 +80,9 @@ extension FeedViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PostCell
         
         let post = posts[indexPath.row]
-        let username = usernamesForUserPosts[indexPath.row]
+        let user = usersForPosts[indexPath.row]
         
-        cell.usernameLabel.text = username
+        cell.usernameLabel.text = user.username
         
         if let imageUrlStr = post.imageUrl,
             let imageUrl = URL(string: imageUrlStr) {
@@ -98,6 +100,24 @@ extension FeedViewController: UICollectionViewDataSource {
                 }
                 
             }.resume()
+        }
+        
+        if let userProfileImageStr = user.profileImageUrl,
+            let imageUrl = URL(string: userProfileImageStr) {
+            
+            URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        cell.userProfileImageView.image = UIImage(data: data)
+                    }
+                }
+            }.resume()
+            
         }
         
         return cell

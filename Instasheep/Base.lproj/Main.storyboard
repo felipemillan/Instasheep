@@ -443,6 +443,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionTextView" destination="Gyf-db-2Je" id="2Ay-uo-Jrg"/>
                         <outlet property="imageView" destination="6o4-NV-AFP" id="hTJ-IR-CxH"/>
                     </connections>
                 </viewController>

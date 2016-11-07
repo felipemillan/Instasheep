@@ -60,7 +60,6 @@ class RegisterViewController: BaseViewController {
         registerButton.layer.masksToBounds = true
         registerButton.layer.cornerRadius = 4
         
-        
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true

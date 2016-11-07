@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180A94C11DD0CF2800DD51C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A94C01DD0CF2800DD51C7 /* User.swift */; };
 		1831E14F1DCD58F500B28B38 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E14D1DCD58F500B28B38 /* PostCell.swift */; };
 		1831E1501DCD58F500B28B38 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E14E1DCD58F500B28B38 /* PostCell.xib */; };
 		1831E1531DCD5AC700B28B38 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180A94C01DD0CF2800DD51C7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1831E14D1DCD58F500B28B38 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1831E14E1DCD58F500B28B38 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		1831E1521DCD5AC700B28B38 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				1831E1571DCD670800B28B38 /* Post.swift */,
+				180A94C01DD0CF2800DD51C7 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				18EC2E851DC77974002BA61F /* AppDelegate.swift in Sources */,
 				189F242A1DCE1F3B006EC147 /* UIImagePickerController+RegisterViewController.swift in Sources */,
 				187277B91DC78EDC0007EDC7 /* FeedViewController.swift in Sources */,
+				180A94C11DD0CF2800DD51C7 /* User.swift in Sources */,
 				187277B21DC77FE70007EDC7 /* Database.swift in Sources */,
 				187277B01DC77E250007EDC7 /* Auth.swift in Sources */,
 				189F242C1DCE36D1006EC147 /* Helpers.swift in Sources */,

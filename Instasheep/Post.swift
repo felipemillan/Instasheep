@@ -12,6 +12,7 @@ struct Post {
     
     var uid: String?
     var userUID: String?
+    var username: String?
     var imageUrl: String?
     var caption: String?
     var likes: Int?
@@ -21,10 +22,12 @@ struct Post {
         self.caption = caption
     }
     
-    init(with dictionary: [String: Any?]) {
+    init(withUID uid: String, dictionary: [String: Any?]) {
+        self.uid = uid
         self.imageUrl = dictionary["imageUrl"] as? String
         self.caption = dictionary["caption"] as? String
         self.userUID = dictionary["userUID"] as? String
+        self.username = dictionary["username"] as? String
     }
     
 }
